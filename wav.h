@@ -1,6 +1,13 @@
+#ifndef __WAV_H
+#define __WAV_H
+
 #include <stdint.h>
 
 #define WAVE_FORMAT_PCM 1
+
+#ifdef __cpulsplus
+extern "C" {
+#endif
 
 typedef struct WAVHEADER_t {
 // идентификатор формата файла
@@ -57,3 +64,9 @@ void fillheader(WAVHEADER_t *header, short channels, long
 	header->chunksize2 = rawsize;
 	header->filesize = header->chunksize2 + 44;
 }
+
+#ifdef __cpulsplus
+}
+#endif
+
+#endif
