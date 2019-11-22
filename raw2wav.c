@@ -1,7 +1,11 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <stdio.h>
+#ifndef _MSC_VER
 #include <unistd.h>
+#else
+#include <msvc_missing/libc/optarg.h>
+#endif
 #include <errno.h>
 #include <sys/stat.h>
 #include <string.h>
